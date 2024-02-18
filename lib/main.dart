@@ -23,7 +23,7 @@ class _StoryPageState extends State<StoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/background.png"),
             fit: BoxFit.cover,
@@ -51,11 +51,10 @@ class _StoryPageState extends State<StoryPage> {
                 child: Container(
                   color: Colors.red,
                   child: Visibility(
-                    visible: storyBrain.buttonShouldBeVisible(),
+              
                     child: TextButton(
                       onPressed: () {
                         //Choice 1 made by user.
-                        storyBrain.nextStory(1);
                         setState(() {
                           storyBrain.nextStory(1);
                         });
@@ -64,6 +63,7 @@ class _StoryPageState extends State<StoryPage> {
                         storyBrain.getChoice1(),
                         style: TextStyle(
                           fontSize: 20.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -75,14 +75,14 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                  child: Container(
-                  color: Colors.red,
+                child: Container(
+                  color: Colors.blue,
                   child: Visibility(
                     visible: storyBrain.buttonShouldBeVisible(),
                     child: TextButton(
                       onPressed: () {
                         //Choice 2 made by user.
-                        storyBrain.nextStory(2);
+
                         setState(() {
                           storyBrain.nextStory(2);
                         });
@@ -91,6 +91,7 @@ class _StoryPageState extends State<StoryPage> {
                         storyBrain.getChoice2(),
                         style: TextStyle(
                           fontSize: 20.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
